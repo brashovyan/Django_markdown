@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+
+{% load blog_extras %}
+
+{% block content %}
+
+    {% for post in posts %}
+        <div>
+            <p>{{ post.title }}</p>
+            {{ post.myfield|convert_markdown|safe }}
+            <p>{{ post.author }}</p>
+            <p>{{ post.date }}</p>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}
+
+
+
+

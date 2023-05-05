@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+
+{% load blog_extras %}
+
+{% block content %}
+    <h1>Второе приложение</h1>
+    {% for post in posts %}
+        <div>
+            <p>{{ post.title }}</p>
+            {{ post.myfield|convert_markdown|safe }}
+            <p>{{ post.author }}</p>
+            <p>{{ post.date }}</p>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}
